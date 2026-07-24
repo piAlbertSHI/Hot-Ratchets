@@ -1,0 +1,7 @@
+# Development log
+
+Each row records one original research revision. Times use the offsets recorded by Git.
+
+| Author timestamp | Work recorded |
+| --- | --- |
+| 2026-07-25 02:28:41+08:00 | Record project maintenance |
