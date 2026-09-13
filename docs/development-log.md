@@ -167,3 +167,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-09-13 17:37:10+08:00 | Record numerical verification for NiTi |
 | 2026-09-13 17:37:31+08:00 | Record solver development |
 | 2026-09-13 18:41:08+08:00 | Record unloading and recovery for NiTi |
+| 2026-09-13 18:41:30+08:00 | Record unloading and recovery |
