@@ -204,3 +204,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-09-14 12:33:41+08:00 | Record research and numerical modeling |
 | 2026-09-14 12:34:16+08:00 | Record research and numerical modeling |
 | 2026-09-14 12:41:31+08:00 | Record martensite bands and interfaces |
+| 2026-09-14 12:42:05+08:00 | Record phase kinetics |
