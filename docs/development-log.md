@@ -309,3 +309,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-09-16 02:51:01+08:00 | Record documentation and figures for NiTi |
 | 2026-09-16 02:51:34+08:00 | Record unloading and recovery for NiTi |
 | 2026-09-16 02:51:57+08:00 | Record unloading and recovery |
+| 2026-09-16 03:02:38+08:00 | Record research and numerical modeling for Cu–Al–Mn |
