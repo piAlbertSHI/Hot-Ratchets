@@ -240,3 +240,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-09-15 19:49:23+08:00 | Record research and numerical modeling |
 | 2026-09-15 19:52:34+08:00 | Record heat balance and temperature |
 | 2026-09-15 19:54:01+08:00 | Record heat balance and temperature |
+| 2026-09-15 20:00:42+08:00 | Record numerical verification |
