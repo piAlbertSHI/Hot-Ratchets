@@ -1,0 +1,36 @@
+function packet = pack_restart_1d_v1(p,state)
+%SMA.PACK_RESTART_1D_V1 Self-describing, lossless 1-D restart packet.
+% The legacy numeric vector is intentionally retained as the payload, but
+% mechanism flags and card identity travel with it.  A receiver must reject
+% a packet whose semantics cannot be reconstructed exactly.
+
+assert(isstruct(p) && isstruct(state), ...
+    'sma:pack_restart_1d_v1:Input','Parameters and state must be structs.');
+payload=sma.pack_state_1d(p,state);
+flags=feature_flags(p);
+packet=struct();
+packet.schema_id='sma.restart.1d.v1';
+packet.model_case_id=p.case_id;
+packet.parameter_card_name=p.name;
+% Store the complete validated card as the signature.  Name/case alone are
+% insufficient because two candidate cards have historically shared them.
+packet.parameter_signature=p;
+packet.state_width=numel(payload);
+packet.feature_flags=flags;
+packet.state_vector=payload(:);
+packet.semantic_contract=struct( ...
+    'phase_coordinate','absolute_M_fraction_xi', ...
+    'r_coordinate','explicit_only_when_flagged', ...
+    'residual_M_authority','xi_res_or_zhang_xi_Mr_declared_by_card', ...
+    'bulk_plastic','legacy_eps_tp_eps_arp_not_source_cohort', ...
+    'lossless',true);
+end
+
+function flags=feature_flags(p)
+flags=struct( ...
+    'Y_activity_population_mix',logical(p.Y_activity_population_mix>0), ...
+    'Y_activity_population_bins',p.Y_activity_population_bins, ...
+    'enable_explicit_r_phase_state',logical(p.enable_explicit_r_phase_state), ...
+    'zhang_direct_history',logical(p.zhang_direct_Yp_coupling>0 || ...
+        p.zhang_direct_Omega_coupling>0));
+end
