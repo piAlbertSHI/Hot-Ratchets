@@ -224,3 +224,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-09-15 10:26:02+08:00 | Record heat balance and temperature |
 | 2026-09-15 11:12:00+08:00 | Record numerical verification |
 | 2026-09-15 11:22:58+08:00 | Record research and numerical modeling for NiTi |
+| 2026-09-15 11:41:57+08:00 | Record solver development |
