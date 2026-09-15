@@ -241,3 +241,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-09-15 19:52:34+08:00 | Record heat balance and temperature |
 | 2026-09-15 19:54:01+08:00 | Record heat balance and temperature |
 | 2026-09-15 20:00:42+08:00 | Record numerical verification |
+| 2026-09-15 20:24:38+08:00 | Record phase kinetics |
