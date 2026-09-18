@@ -325,3 +325,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-09-17 23:17:27+08:00 | Record loading and strain response for NiTi |
 | 2026-09-18 23:31:17+08:00 | Record loading and strain response for NiTi |
 | 2026-09-18 23:37:48+08:00 | Record loading and strain response for NiTi |
+| 2026-09-18 23:46:37+08:00 | Record plasticity and material history for NiTi |
