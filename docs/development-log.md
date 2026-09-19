@@ -410,3 +410,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-09-19 20:21:34+08:00 | Record research and numerical modeling for the SUN inclusion model |
 | 2026-09-19 20:26:52+08:00 | Record numerical verification for NiTi |
 | 2026-09-19 20:30:14+08:00 | Record research and numerical modeling for NiTi |
+| 2026-09-19 20:31:33+08:00 | Record research and numerical modeling for NiTi |
