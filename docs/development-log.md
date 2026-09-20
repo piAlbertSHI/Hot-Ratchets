@@ -428,3 +428,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-09-20 11:03:36+08:00 | Record research and numerical modeling for Cu–Al–Mn |
 | 2026-09-20 11:58:37+08:00 | Record plasticity and material history for NiTi |
 | 2026-09-20 12:09:59+08:00 | Record loading and strain response for NiTi |
+| 2026-09-20 12:17:17+08:00 | Record phase kinetics for NiTi |
