@@ -520,3 +520,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-09-22 03:20:42+08:00 | Record research and numerical modeling for NiTi |
 | 2026-09-22 03:30:49+08:00 | Record research and numerical modeling for NiTi |
 | 2026-09-22 03:35:57+08:00 | Record research and numerical modeling for Cu–Al–Mn, the SUN inclusion model |
+| 2026-09-22 03:48:51+08:00 | Record research and numerical modeling |
