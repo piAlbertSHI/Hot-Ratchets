@@ -548,3 +548,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-09-22 06:44:50+08:00 | Record loading and strain response |
 | 2026-09-22 07:14:49+08:00 | Record phase kinetics |
 | 2026-09-22 07:19:32+08:00 | Record phase kinetics for NiTi |
+| 2026-09-22 07:34:25+08:00 | Record loading and strain response for NiTi |
