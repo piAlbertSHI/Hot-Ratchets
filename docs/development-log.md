@@ -512,3 +512,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-09-22 02:22:49+08:00 | Record research and numerical modeling for Cu–Al–Mn, the SUN inclusion model |
 | 2026-09-22 02:29:05+08:00 | Record numerical verification |
 | 2026-09-22 02:35:13+08:00 | Record research and numerical modeling for Cu–Al–Mn |
+| 2026-09-22 02:40:58+08:00 | Record numerical verification for the SUN inclusion model |
