@@ -527,3 +527,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-09-22 04:02:10+08:00 | Record research and numerical modeling |
 | 2026-09-22 04:08:39+08:00 | Record solver development |
 | 2026-09-22 04:20:40+08:00 | Record research and numerical modeling for Cu–Al–Mn |
+| 2026-09-22 04:28:39+08:00 | Record research and numerical modeling for Cu–Al–Mn |
