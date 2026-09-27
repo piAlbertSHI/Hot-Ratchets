@@ -1,0 +1,226 @@
+function [phase,plastic,T,audit]= ...
+    candidate_gradient_monolithic_joint_thermomechanical_step_1d( ...
+    p,old_phase,old_plastic,T_old,sigma_old,macro_strain,dt,closure, ...
+    plastic_closure,thermal_closure,guess)
+%SMA.CANDIDATE_GRADIENT_MONOLITHIC_JOINT_THERMOMECHANICAL_STEP_1D
+% Solve the thermal residual and the full material-point/grid response in
+% one nonlinear system. Temperature is not iterated as a post-mechanical
+% correction; each residual evaluation recomputes the accepted phase,
+% direct-history and ARP/TRIP state from the committed state.
+
+if nargin<11 || isempty(guess), guess=struct(); end
+n=numel(old_phase); T_old=T_old(:);
+assert(numel(T_old)==n && numel(old_plastic)==n, ...
+    'Matching thermal, phase and plastic grid states are required.');
+if isfield(guess,'temperature_K') && numel(guess.temperature_K)==n
+    T0=guess.temperature_K(:);
+else
+    T0=T_old;
+end
+lower=T_old-get_option(thermal_closure,'temperature_lower_bound_K',40);
+upper=T_old+get_option(thermal_closure,'temperature_upper_bound_K',40);
+assert(all(isfinite([T0;lower;upper])) && all(lower<upper), ...
+    'Finite thermal bounds are required.');
+T0=min(max(T0,lower),upper);
+last_failure=struct('identifier','','message','');
+capture_probe_ledger=logical(get_option(thermal_closure,'capture_probe_ledger',false));
+probe_counter=0;
+probe_ledger=struct('probe_index',{},'T_probe_K',{},'T_balance_K',{}, ...
+    'temperature_residual_K',{},'phase_residual_norm',{}, ...
+    'outer_strain_residual',{},'solver_mode',{},'status',{}, ...
+    'failure_identifier',{},'failure_message',{},'heat_terms',{});
+
+% Exact symmetry reduction for the neutral-gradient, homogeneous branch.
+% A vector temperature solve can probe asymmetric trial temperatures and
+% switch local projected active sets even though the committed equations are
+% permutation-invariant.  Solve one scalar thermal equation and replicate
+% its root; this is an equation-level reduction, not an endpoint assignment.
+homogeneous_thermal = get_option(closure,'homogeneous_thermal_reduction',true) && ...
+    isfield(closure,'kappa_MPa_length2') && closure.kappa_MPa_length2==0 && ...
+    max(abs(T_old-T_old(1)))<=1e-14 && homogeneous_state(old_phase,old_plastic,n);
+if homogeneous_thermal
+    scalar=@(Ts)mean(evaluate_temperature(Ts*ones(n,1)));
+    opts_scalar=optimoptions('lsqnonlin','Display','off', ...
+        'FunctionTolerance',get_option(thermal_closure,'joint_function_tolerance',1e-10), ...
+        'StepTolerance',get_option(thermal_closure,'joint_step_tolerance',1e-10), ...
+        'OptimalityTolerance',get_option(thermal_closure,'joint_optimality_tolerance',1e-9), ...
+        'MaxIterations',get_option(thermal_closure,'joint_max_iterations',120), ...
+        'MaxFunctionEvaluations',get_option(thermal_closure,'joint_max_function_evaluations',3000), ...
+        'FiniteDifferenceType','forward','ScaleProblem','jacobian');
+    [Ts,~,~,exitflag,output]=lsqnonlin(scalar,T0(1),lower(1),upper(1),opts_scalar);
+    T=Ts*ones(n,1);
+    [scaled_residual,phase,plastic,mechanical,heat]=evaluate_temperature(T);
+    if isempty(mechanical)
+        fail_closed(last_failure,'homogeneous thermal solve');
+    end
+    temperature_residual=scaled_residual*get_option(thermal_closure,'temperature_scale_K',1);
+    tol=get_option(thermal_closure,'joint_temperature_tolerance_K',1e-7);
+    if max(abs(temperature_residual))<=tol
+        audit=struct('stress_MPa',mechanical.stress_MPa,'mechanical',mechanical, ...
+            'heat',heat,'temperature_residual_K',temperature_residual, ...
+            'max_temperature_residual_K',max(abs(temperature_residual)), ...
+            'joint_iterations',output.iterations,'iterations',output.iterations, ...
+            'joint_function_count',output.funcCount,'joint_exitflag',exitflag, ...
+            'solver_mode','lsqnonlin_scalar_homogeneous', ...
+            'observation_accessed',false,'production_connected',false);
+        audit.probe_ledger=probe_ledger;
+        audit.probe_ledger_available=capture_probe_ledger;
+        return;
+    end
+end
+
+cache=struct('valid',false,'T',[],'phase',[],'plastic',[], ...
+    'mechanical',[],'heat',[]);
+fun=@(Tprobe)evaluate_temperature(Tprobe);
+mode=get_option(thermal_closure,'joint_solver_mode','secant_then_lsq');
+tol=get_option(thermal_closure,'joint_temperature_tolerance_K',1e-7);
+if strcmpi(mode,'secant_then_lsq')
+    [rprev,~,~,~,~]=evaluate_temperature(T0);
+    delta=get_option(thermal_closure,'joint_secant_probe_K',0.02);
+    Tprev=T0; Ttrial=min(max(T0+delta,lower),upper);
+    [rtrial,~,~,~,~]=evaluate_temperature(Ttrial);
+    secant_ok=false;
+    for secant_iter=1:get_option(thermal_closure,'joint_secant_iterations',8)
+        slope=(rtrial-rprev)./(Ttrial-Tprev);
+        slope(abs(slope)<1e-8)=1e-8;
+        Tnext=min(max(Ttrial-rtrial./slope,lower),upper);
+        if norm(Tnext-Ttrial,inf)<=1e-10, break; end
+        [rnext,phnext,plnext,mechnext,heatnext]=evaluate_temperature(Tnext);
+        temperature_residual_next=rnext*get_option(thermal_closure, ...
+            'temperature_scale_K',1);
+        if max(abs(temperature_residual_next))<=tol
+            T=Tnext; phase=phnext; plastic=plnext; mechanical=mechnext; heat=heatnext;
+            scaled_residual=rnext; exitflag=1;
+            output=struct('iterations',secant_iter,'funcCount',2+secant_iter);
+            secant_ok=true; break;
+        end
+        if max(abs(rnext))>max(abs(rtrial))*1.25, break; end
+        Tprev=Ttrial; rprev=rtrial; Ttrial=Tnext; rtrial=rnext;
+    end
+    if secant_ok
+        temperature_residual=scaled_residual*get_option(thermal_closure, ...
+            'temperature_scale_K',1);
+        audit=struct('stress_MPa',mechanical.stress_MPa,'mechanical',mechanical, ...
+            'heat',heat,'temperature_residual_K',temperature_residual, ...
+            'max_temperature_residual_K',max(abs(temperature_residual)), ...
+            'joint_iterations',output.iterations,'iterations',output.iterations, ...
+            'joint_function_count',output.funcCount,'joint_exitflag',exitflag, ...
+            'solver_mode','secant','observation_accessed',false, ...
+            'production_connected',false);
+        audit.probe_ledger=probe_ledger;
+        audit.probe_ledger_available=capture_probe_ledger;
+        return;
+    end
+end
+options=optimoptions('lsqnonlin','Display','off', ...
+    'FunctionTolerance',get_option(thermal_closure,'joint_function_tolerance',1e-10), ...
+    'StepTolerance',get_option(thermal_closure,'joint_step_tolerance',1e-10), ...
+    'OptimalityTolerance',get_option(thermal_closure,'joint_optimality_tolerance',1e-9), ...
+    'MaxIterations',get_option(thermal_closure,'joint_max_iterations',120), ...
+    'MaxFunctionEvaluations',get_option(thermal_closure,'joint_max_function_evaluations',3000), ...
+    'FiniteDifferenceType','forward','ScaleProblem','jacobian');
+[T,~,scaled_residual,exitflag,output]=lsqnonlin(fun,T0,lower,upper,options);
+[scaled_residual,phase,plastic,mechanical,heat]=evaluate_temperature(T);
+if isempty(mechanical)
+    fail_closed(last_failure,'joint thermal solve');
+end
+temperature_residual=scaled_residual*get_option(thermal_closure,'temperature_scale_K',1);
+tol=get_option(thermal_closure,'joint_temperature_tolerance_K',1e-7);
+assert(max(abs(temperature_residual))<=tol, ...
+    'Joint thermo-mechanical solve failed; max thermal residual %.6g K (exitflag %d).', ...
+    max(abs(temperature_residual)),exitflag);
+audit=struct('stress_MPa',mechanical.stress_MPa,'mechanical',mechanical, ...
+    'heat',heat,'temperature_residual_K',temperature_residual, ...
+    'max_temperature_residual_K',max(abs(temperature_residual)), ...
+    'joint_iterations',output.iterations,'iterations',output.iterations, ...
+    'joint_function_count',output.funcCount, ...
+    'joint_exitflag',exitflag,'solver_mode','lsqnonlin', ...
+    'observation_accessed',false, ...
+    'production_connected',false);
+audit.probe_ledger=probe_ledger;
+audit.probe_ledger_available=capture_probe_ledger;
+
+    function [residual,phase_o,plastic_o,mechanical_o,heat_o]=evaluate_temperature(Tprobe)
+        Tbalance=nan(size(Tprobe));
+        try
+            [phase_o,plastic_o,mechanical_o]= ...
+                sma.candidate_gradient_monolithic_full_step_1d( ...
+                p,old_phase,old_plastic,macro_strain,Tprobe,dt,closure, ...
+                plastic_closure,guess);
+            [Tbalance,heat_o]=sma.candidate_gradient_heat_balance_1d( ...
+                p,T_old,Tprobe,sigma_old,mechanical_o.phase, ...
+                mechanical_o.plastic,dt,thermal_closure);
+            residual=(Tbalance-Tprobe)/get_option(thermal_closure, ...
+                'temperature_scale_K',1);
+            cache.valid=true; cache.T=Tprobe; cache.phase=phase_o; ...
+                cache.plastic=plastic_o; cache.mechanical=mechanical_o; ...
+                cache.heat=heat_o;
+        catch exception
+            % Keep the equation solver in the admissible domain while
+            % exposing a large residual for a mechanically invalid branch.
+            last_failure.identifier=exception.identifier;
+            last_failure.message=exception.message;
+            residual=1e6*ones(n,1);
+            phase_o=[]; plastic_o=[]; mechanical_o=[]; heat_o=struct( ...
+                'failed_branch',true,'failure_identifier',exception.identifier, ...
+                'failure_message',exception.message);
+        end
+        if capture_probe_ledger
+            probe_counter=probe_counter+1;
+            entry=struct('probe_index',probe_counter,'T_probe_K',Tprobe(:), ...
+                'T_balance_K',Tbalance(:), ...
+                'temperature_residual_K',residual(:)*get_option(thermal_closure, ...
+                'temperature_scale_K',1), ...
+                'phase_residual_norm',nan,'outer_strain_residual',nan, ...
+                'solver_mode',get_option(thermal_closure,'joint_solver_mode','unknown'), ...
+                'status','failed','failure_identifier','','failure_message','', ...
+                'heat_terms',heat_o);
+            if ~isempty(mechanical_o)
+                entry.status='candidate';
+                if isfield(mechanical_o,'phase') && ...
+                        isfield(mechanical_o.phase,'residual_norm')
+                    entry.phase_residual_norm=mechanical_o.phase.residual_norm;
+                end
+                if isfield(mechanical_o,'outer_strain_residual')
+                    entry.outer_strain_residual=mechanical_o.outer_strain_residual;
+                end
+            else
+                entry.failure_identifier=last_failure.identifier;
+                entry.failure_message=last_failure.message;
+            end
+            probe_ledger(end+1)=entry; %#ok<AGROW>
+        end
+    end
+end
+
+function fail_closed(failure,scope)
+if isfield(failure,'identifier') && ~isempty(failure.identifier)
+    error('sma:candidate_gradient_monolithic_joint_thermomechanical_step_1d:InvalidProbe', ...
+        '%s invalid: %s: %s',scope,failure.identifier,failure.message);
+else
+    error('sma:candidate_gradient_monolithic_joint_thermomechanical_step_1d:InvalidProbe', ...
+        '%s returned no mechanical state.',scope);
+end
+end
+
+function tf=homogeneous_state(states,plastic,n)
+tf=numel(states)==n && numel(plastic)==n;
+if ~tf, return; end
+names={'xi_A','xi_R','xi_M','xi_MA','xi_MR','eps_RT','eps_MT'};
+pnames={'xi_M','xi_M_acc','gamma_AR','gamma_M','eps_p_AR','eps_p_M', ...
+    'rho_AR','rho_M','eps_ARP','eps_TRIP','chi','beta','xi_Mr','Omega','Yp', ...
+    'DeltaEtaP_MPaK','Lambda_M'};
+for j=2:n
+    for k=1:numel(names)
+        tf=tf && abs(states{j}.(names{k})-states{1}.(names{k}))<=1e-14;
+    end
+    for k=1:numel(pnames)
+        tf=tf && abs(plastic{j}.(pnames{k})-plastic{1}.(pnames{k}))<=1e-14;
+    end
+    if ~tf, return; end
+end
+end
+
+function value=get_option(s,name,default)
+if isfield(s,name), value=s.(name); else, value=default; end
+end
