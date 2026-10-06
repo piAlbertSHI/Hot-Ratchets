@@ -794,3 +794,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-07 03:26:58+08:00 | Record research and numerical modeling |
 | 2026-10-07 03:53:07+08:00 | Record heat balance and temperature |
 | 2026-10-07 04:03:26+08:00 | Record martensite bands and interfaces |
+| 2026-10-07 04:22:31+08:00 | Record unloading and recovery |
