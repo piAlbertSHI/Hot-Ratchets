@@ -802,3 +802,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-07 05:07:01+08:00 | Record unloading and recovery |
 | 2026-10-07 05:10:06+08:00 | Record project maintenance |
 | 2026-10-07 05:18:50+08:00 | Record heat balance and temperature |
+| 2026-10-07 05:34:06+08:00 | Record phase kinetics for NiTi |
