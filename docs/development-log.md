@@ -842,3 +842,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-08 17:39:09+08:00 | Record research and numerical modeling |
 | 2026-10-08 18:26:04+08:00 | Record research and numerical modeling |
 | 2026-10-08 19:15:13+08:00 | Record numerical verification for NiTi |
+| 2026-10-08 19:52:02+08:00 | Record plasticity and material history |
