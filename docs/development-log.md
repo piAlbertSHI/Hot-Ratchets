@@ -901,3 +901,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-11 09:46:20+08:00 | Record project maintenance |
 | 2026-10-11 10:12:49+08:00 | Record numerical verification |
 | 2026-10-11 10:35:31+08:00 | Record unloading and recovery |
+| 2026-10-11 10:49:41+08:00 | Record heat balance and temperature |
