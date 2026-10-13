@@ -929,3 +929,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-13 12:35:42+08:00 | Record phase kinetics for NiTi |
 | 2026-10-13 13:34:43+08:00 | Record research and numerical modeling for NiTi |
 | 2026-10-13 14:04:51+08:00 | Record heat balance and temperature for NiTi |
+| 2026-10-13 18:23:03+08:00 | Record numerical verification |
