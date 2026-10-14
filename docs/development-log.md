@@ -939,3 +939,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-14 19:11:05+08:00 | Record phase kinetics |
 | 2026-10-14 22:10:02+08:00 | Record numerical verification for NiTi |
 | 2026-10-15 00:26:11+08:00 | Record unloading and recovery |
+| 2026-10-15 00:29:26+08:00 | Record numerical verification |
