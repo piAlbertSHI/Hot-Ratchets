@@ -967,3 +967,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-15 12:24:06+08:00 | Record unloading and recovery |
 | 2026-10-15 12:25:41+08:00 | Record heat balance and temperature |
 | 2026-10-15 12:54:14+08:00 | Record heat balance and temperature |
+| 2026-10-15 12:55:57+08:00 | Record unloading and recovery |
