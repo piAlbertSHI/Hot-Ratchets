@@ -1055,3 +1055,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-16 20:12:35+08:00 | Record numerical verification for Cu–Al–Mn |
 | 2026-10-16 20:13:10+08:00 | Record numerical verification |
 | 2026-10-16 20:25:47+08:00 | Record numerical verification |
+| 2026-10-16 20:27:26+08:00 | Record heat balance and temperature |
