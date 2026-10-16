@@ -1020,3 +1020,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-16 10:13:14+08:00 | Record research and numerical modeling |
 | 2026-10-16 10:25:13+08:00 | Record research and numerical modeling for Cu–Al–Mn |
 | 2026-10-16 11:10:45+08:00 | Record numerical verification for Cu–Al–Mn |
+| 2026-10-16 11:58:33+08:00 | Record numerical verification for NiTi |
