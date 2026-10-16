@@ -1037,3 +1037,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-16 14:11:53+08:00 | Record research and numerical modeling |
 | 2026-10-16 14:14:45+08:00 | Record research and numerical modeling |
 | 2026-10-16 14:22:31+08:00 | Record numerical verification |
+| 2026-10-16 15:46:58+08:00 | Record phase kinetics |
