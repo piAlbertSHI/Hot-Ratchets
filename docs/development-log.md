@@ -1041,3 +1041,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-16 15:59:59+08:00 | Record phase kinetics |
 | 2026-10-16 16:02:29+08:00 | Record phase kinetics |
 | 2026-10-16 16:39:22+08:00 | Record research and numerical modeling |
+| 2026-10-16 16:51:57+08:00 | Record research and numerical modeling for Cu–Al–Mn |
