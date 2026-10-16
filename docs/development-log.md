@@ -1059,3 +1059,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-16 20:45:56+08:00 | Record numerical verification |
 | 2026-10-16 20:54:23+08:00 | Record numerical verification |
 | 2026-10-16 20:55:58+08:00 | Record numerical verification |
+| 2026-10-16 21:01:58+08:00 | Record numerical verification for the SUN inclusion model |
