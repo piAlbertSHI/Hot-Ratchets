@@ -1142,3 +1142,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-17 23:20:07+08:00 | Record numerical verification |
 | 2026-10-17 23:20:51+08:00 | Record numerical verification |
 | 2026-10-18 00:02:16+08:00 | Record loading and strain response |
+| 2026-10-18 00:04:11+08:00 | Record heat balance and temperature |
