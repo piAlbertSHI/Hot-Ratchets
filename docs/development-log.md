@@ -1259,3 +1259,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-19 12:06:20+08:00 | Record unloading and recovery |
 | 2026-10-19 12:06:47+08:00 | Record unloading and recovery |
 | 2026-10-19 12:14:26+08:00 | Record heat balance and temperature for NiTi, Cu–Al–Mn |
+| 2026-10-19 12:23:39+08:00 | Record unloading and recovery for Cu–Al–Mn |
