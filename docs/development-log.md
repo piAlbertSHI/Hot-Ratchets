@@ -1313,3 +1313,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-19 21:50:54+08:00 | Record phase kinetics for NiTi |
 | 2026-10-19 22:02:38+08:00 | Record phase kinetics for NiTi, Cu–Al–Mn |
 | 2026-10-19 22:10:52+08:00 | Record phase kinetics for NiTi |
+| 2026-10-19 22:11:11+08:00 | Record research and numerical modeling |
