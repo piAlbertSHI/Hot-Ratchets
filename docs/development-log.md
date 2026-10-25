@@ -1439,3 +1439,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-25 13:53:35+08:00 | Record plasticity and material history |
 | 2026-10-25 13:54:11+08:00 | Record plasticity and material history |
 | 2026-10-25 14:11:39+08:00 | Record research and numerical modeling |
+| 2026-10-25 14:31:41+08:00 | Record project maintenance for Cu–Al–Mn |
