@@ -1496,3 +1496,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-26 04:27:13+08:00 | Record research and numerical modeling |
 | 2026-10-26 05:00:25+08:00 | Record research and numerical modeling |
 | 2026-10-26 05:00:54+08:00 | Record loading and strain response |
+| 2026-10-26 05:07:43+08:00 | Record unloading and recovery |
