@@ -1489,3 +1489,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-26 01:51:42+08:00 | Record research and numerical modeling |
 | 2026-10-26 02:40:17+08:00 | Record heat balance and temperature for NiTi, Cu–Al–Mn |
 | 2026-10-26 03:02:50+08:00 | Record heat balance and temperature for NiTi, Cu–Al–Mn |
+| 2026-10-26 03:13:28+08:00 | Record research and numerical modeling for Cu–Al–Mn |
