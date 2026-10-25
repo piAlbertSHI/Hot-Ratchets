@@ -1454,3 +1454,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-25 18:42:39+08:00 | Record research and numerical modeling |
 | 2026-10-25 19:07:56+08:00 | Record research and numerical modeling |
 | 2026-10-25 19:31:55+08:00 | Record numerical verification |
+| 2026-10-25 19:43:04+08:00 | Record heat balance and temperature |
