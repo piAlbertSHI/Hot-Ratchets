@@ -1535,3 +1535,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-10-26 13:17:49+08:00 | Record project maintenance |
 | 2026-10-26 13:30:58+08:00 | Record research and numerical modeling |
 | 2026-10-26 14:23:59+08:00 | Record research and numerical modeling for Cu–Al–Mn |
+| 2026-10-26 15:28:53+08:00 | Record heat balance and temperature |
