@@ -1624,3 +1624,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-14 01:31:08-05:00 | Record research and numerical modeling for Cu–Al–Mn |
 | 2026-11-14 04:28:55-05:00 | Record phase kinetics |
 | 2026-11-14 11:48:42-05:00 | Record unloading and recovery for NiTi |
+| 2026-11-14 11:49:39-05:00 | Record research and numerical modeling for NiTi |
