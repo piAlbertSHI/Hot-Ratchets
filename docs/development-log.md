@@ -1668,3 +1668,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-15 10:52:32-05:00 | Record research and numerical modeling |
 | 2026-11-15 10:58:59-05:00 | Record martensite bands and interfaces for Cu–Al–Mn |
 | 2026-11-15 11:04:48-05:00 | Record martensite bands and interfaces for the SUN inclusion model |
+| 2026-11-15 11:08:17-05:00 | Record martensite bands and interfaces for the SUN inclusion model |
