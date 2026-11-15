@@ -1637,3 +1637,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-15 09:38:26-05:00 | Record research and numerical modeling |
 | 2026-11-15 09:42:34-05:00 | Record plasticity and material history for NiTi |
 | 2026-11-15 09:48:41-05:00 | Record plasticity and material history for NiTi |
+| 2026-11-15 09:51:02-05:00 | Record phase kinetics for NiTi |
