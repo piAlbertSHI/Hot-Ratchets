@@ -1723,3 +1723,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-15 13:34:02-05:00 | Record martensite bands and interfaces for the SUN inclusion model |
 | 2026-11-15 13:36:56-05:00 | Record numerical verification |
 | 2026-11-15 13:39:14-05:00 | Record numerical verification |
+| 2026-11-15 13:42:08-05:00 | Record heat balance and temperature |
