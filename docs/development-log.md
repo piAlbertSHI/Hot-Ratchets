@@ -1721,3 +1721,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-15 13:28:16-05:00 | Record research and numerical modeling for NiTi |
 | 2026-11-15 13:31:33-05:00 | Record research and numerical modeling for Cu–Al–Mn |
 | 2026-11-15 13:34:02-05:00 | Record martensite bands and interfaces for the SUN inclusion model |
+| 2026-11-15 13:36:56-05:00 | Record numerical verification |
