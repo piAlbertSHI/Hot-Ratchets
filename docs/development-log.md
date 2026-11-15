@@ -1701,3 +1701,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-15 12:22:53-05:00 | Record numerical verification for Cu–Al–Mn |
 | 2026-11-15 12:27:23-05:00 | Record numerical verification for NiTi |
 | 2026-11-15 12:37:25-05:00 | Record loading and strain response for NiTi |
+| 2026-11-15 12:38:49-05:00 | Record research and numerical modeling for NiTi |
