@@ -1762,3 +1762,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-16 15:57:35-05:00 | Record unloading and recovery |
 | 2026-11-16 16:07:29-05:00 | Record heat balance and temperature |
 | 2026-11-16 16:12:19-05:00 | Record unloading and recovery |
+| 2026-11-16 16:44:58-05:00 | Record loading and strain response |
