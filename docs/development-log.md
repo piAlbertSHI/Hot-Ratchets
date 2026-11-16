@@ -1755,3 +1755,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-16 00:30:45-05:00 | Record research and numerical modeling for NiTi |
 | 2026-11-16 04:10:23-05:00 | Record unloading and recovery |
 | 2026-11-16 04:29:01-05:00 | Record phase kinetics |
+| 2026-11-16 14:52:52-05:00 | Record unloading and recovery |
