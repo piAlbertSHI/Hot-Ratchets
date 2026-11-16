@@ -1766,3 +1766,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-16 16:58:56-05:00 | Record unloading and recovery |
 | 2026-11-16 17:00:19-05:00 | Record phase kinetics |
 | 2026-11-16 17:04:23-05:00 | Record phase kinetics |
+| 2026-11-16 17:05:00-05:00 | Record numerical verification |
