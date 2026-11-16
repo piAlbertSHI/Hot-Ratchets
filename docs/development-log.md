@@ -1751,3 +1751,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-16 00:14:53-05:00 | Record solver development for NiTi |
 | 2026-11-16 00:15:17-05:00 | Record solver development |
 | 2026-11-16 00:17:41-05:00 | Record research and numerical modeling |
+| 2026-11-16 00:30:13-05:00 | Record heat balance and temperature |
