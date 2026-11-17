@@ -1797,3 +1797,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-16 21:18:33-05:00 | Record heat balance and temperature |
 | 2026-11-16 21:21:14-05:00 | Record loading and strain response |
 | 2026-11-16 21:26:58-05:00 | Record research and numerical modeling |
+| 2026-11-17 00:28:33-05:00 | Record heat balance and temperature for NiTi |
