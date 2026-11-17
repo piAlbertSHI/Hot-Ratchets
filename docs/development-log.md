@@ -1786,3 +1786,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-16 19:18:51-05:00 | Record numerical verification |
 | 2026-11-16 19:28:38-05:00 | Record research and numerical modeling |
 | 2026-11-16 19:31:10-05:00 | Record research and numerical modeling |
+| 2026-11-16 19:59:57-05:00 | Record unloading and recovery |
