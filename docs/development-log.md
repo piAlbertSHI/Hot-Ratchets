@@ -1810,3 +1810,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-17 16:19:39-05:00 | Record unloading and recovery for NiTi |
 | 2026-11-17 18:08:03-05:00 | Record heat balance and temperature for NiTi |
 | 2026-11-17 19:03:58-05:00 | Record unloading and recovery for NiTi |
+| 2026-11-17 19:36:59-05:00 | Record martensite bands and interfaces |
