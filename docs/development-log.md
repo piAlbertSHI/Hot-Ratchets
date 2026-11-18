@@ -1829,3 +1829,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-18 12:20:12-05:00 | Record unloading and recovery for NiTi |
 | 2026-11-18 12:48:34-05:00 | Record phase kinetics for NiTi |
 | 2026-11-18 13:13:58-05:00 | Record unloading and recovery for NiTi |
+| 2026-11-18 13:38:32-05:00 | Record unloading and recovery for NiTi |
