@@ -1825,3 +1825,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-18 10:10:35-05:00 | Record plasticity and material history for NiTi |
 | 2026-11-18 10:38:37-05:00 | Record heat balance and temperature for NiTi |
 | 2026-11-18 11:09:30-05:00 | Record heat balance and temperature for NiTi, Cu–Al–Mn |
+| 2026-11-18 11:40:38-05:00 | Record plasticity and material history for NiTi |
