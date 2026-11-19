@@ -1887,3 +1887,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-19 06:25:28-05:00 | Record martensite bands and interfaces for NiTi |
 | 2026-11-19 06:53:22-05:00 | Record heat balance and temperature for NiTi, Cu–Al–Mn |
 | 2026-11-19 07:22:25-05:00 | Record phase kinetics for NiTi, Cu–Al–Mn |
+| 2026-11-19 07:43:02-05:00 | Record research and numerical modeling for NiTi, Cu–Al–Mn |
