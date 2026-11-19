@@ -1872,3 +1872,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-19 01:18:23-05:00 | Record unloading and recovery for NiTi |
 | 2026-11-19 01:25:46-05:00 | Record unloading and recovery for NiTi |
 | 2026-11-19 01:36:36-05:00 | Record loading and strain response for NiTi |
+| 2026-11-19 01:36:37-05:00 | Record loading and strain response for Cu–Al–Mn |
