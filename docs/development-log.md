@@ -1865,3 +1865,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-19 00:31:30-05:00 | Record unloading and recovery for NiTi |
 | 2026-11-19 00:43:16-05:00 | Record research and numerical modeling for NiTi |
 | 2026-11-19 00:46:49-05:00 | Record research and numerical modeling for NiTi |
+| 2026-11-19 00:58:21-05:00 | Record heat balance and temperature for NiTi, the SUN inclusion model |
