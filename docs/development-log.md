@@ -1882,3 +1882,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-19 04:18:46-05:00 | Record phase kinetics for NiTi |
 | 2026-11-19 04:41:18-05:00 | Record unloading and recovery for NiTi |
 | 2026-11-19 05:04:20-05:00 | Record numerical verification for NiTi |
+| 2026-11-19 05:44:13-05:00 | Record heat balance and temperature for NiTi, Cu–Al–Mn |
