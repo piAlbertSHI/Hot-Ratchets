@@ -1856,3 +1856,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-18 22:30:58-05:00 | Record heat balance and temperature for NiTi, the SUN inclusion model |
 | 2026-11-18 22:38:34-05:00 | Record phase kinetics for NiTi |
 | 2026-11-18 22:54:53-05:00 | Record heat balance and temperature for NiTi, Cu–Al–Mn |
+| 2026-11-19 00:00:57-05:00 | Record heat balance and temperature for NiTi |
