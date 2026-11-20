@@ -1916,3 +1916,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-19 19:23:45-05:00 | Record unloading and recovery for NiTi |
 | 2026-11-19 19:50:16-05:00 | Record unloading and recovery for NiTi |
 | 2026-11-19 20:14:48-05:00 | Record martensite bands and interfaces |
+| 2026-11-19 20:31:46-05:00 | Record unloading and recovery for NiTi |
