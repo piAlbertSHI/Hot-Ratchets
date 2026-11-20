@@ -1940,3 +1940,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-20 06:28:25-05:00 | Record research and numerical modeling for NiTi |
 | 2026-11-20 07:03:17-05:00 | Record research and numerical modeling for NiTi |
 | 2026-11-20 07:24:30-05:00 | Record unloading and recovery for NiTi |
+| 2026-11-20 07:47:01-05:00 | Record martensite bands and interfaces for NiTi, Cu–Al–Mn |
