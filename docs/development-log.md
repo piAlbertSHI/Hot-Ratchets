@@ -1936,3 +1936,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-20 04:36:51-05:00 | Record research and numerical modeling for NiTi, Cu–Al–Mn, the SUN inclusion model |
 | 2026-11-20 04:55:09-05:00 | Record martensite bands and interfaces |
 | 2026-11-20 05:19:15-05:00 | Record research and numerical modeling |
+| 2026-11-20 05:47:20-05:00 | Record heat balance and temperature for NiTi |
