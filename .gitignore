@@ -1,0 +1,20 @@
+# Generated results and local research files
+/outputs/
+/data/
+/archive/
+/research-data/
+/tmp/
+*.mat
+*.npz
+*.zip
+*.pdf
+*.docx
+
+# MATLAB and operating-system files
+*.asv
+*.slxc
+*.fig
+codegen/
+slprj/
+Thumbs.db
+.DS_Store
