@@ -1966,3 +1966,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-21 07:02:29-05:00 | Record loading and strain response for NiTi |
 | 2026-11-21 07:27:36-05:00 | Record research and numerical modeling for NiTi, the SUN inclusion model |
 | 2026-11-21 07:49:08-05:00 | Record martensite bands and interfaces for NiTi |
+| 2026-11-21 08:24:11-05:00 | Record unloading and recovery for NiTi |
