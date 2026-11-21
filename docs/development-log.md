@@ -1944,3 +1944,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-20 08:18:26-05:00 | Record martensite bands and interfaces for NiTi, Cu–Al–Mn, the SUN inclusion model |
 | 2026-11-20 09:27:24-05:00 | Record unloading and recovery for NiTi, the SUN inclusion model |
 | 2026-11-20 09:52:24-05:00 | Record unloading and recovery for NiTi, Cu–Al–Mn, the SUN inclusion model |
+| 2026-11-20 23:35:03-05:00 | Record unloading and recovery for NiTi |
