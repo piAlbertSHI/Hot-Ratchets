@@ -1948,3 +1948,4 @@ Each row records one original research revision. Times use the offsets recorded 
 | 2026-11-20 23:52:06-05:00 | Record unloading and recovery for NiTi, Cu–Al–Mn, the SUN inclusion model |
 | 2026-11-21 00:13:12-05:00 | Record unloading and recovery for NiTi |
 | 2026-11-21 00:37:53-05:00 | Record heat balance and temperature for NiTi |
+| 2026-11-21 00:58:19-05:00 | Record loading and strain response for NiTi |
